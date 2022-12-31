@@ -192,3 +192,27 @@ Como se mencionase en la presentación de la carpeta `patterns`, existe una carp
 Para obtener acceso a estos datos, consultar con profesores Benjamín Bustos o Iván Sipirán (DCC UChile).
 
 ## Notebooks y ejecución
+
+A continuación se presentan los distintos scripts que componen la carpeta `notebooks`, en el orden en que deberían ser ejecutados para obtener resultados primero desde un Enfoque Tradicional y luego desde un Enfoque XMLC. 
+
+### 1. ``Labels normalization.ipynb``
+
+
+
+### 2. `Split and Augmentation.ipynb`
+
+### 3. `Split and Augmentation.ipynb`
+
+### 4. `Resnet Training.ipynb` y ``ResNet Feature Extraction``
+
+## 5. ``Traditional MLC.ipynb``
+
+### 6. ``C2AE Training.ipynb`` y ``AlexNet Extraction.ipynb``
+
+### 7. ``TDNN Training.ipynb``
+
+### 8. ``CNN-RNN Training.ipynb``
+
+### 9. ``Calculadora de métricas.ipynb``
+
+El notebook `Calculadora de métricas`  tiene un fin meramente auxiliar. Su objetivo es leer los archivos de predicciones generados por los notebooks de C2AE, TDNN y CNN-RNN y volver a generar los archivos de resultados `metadata.csv`, lo cual resulta útil en caso de querer calcular una métrica nueva (no considerada al momento de ejecutar los experimentos).
