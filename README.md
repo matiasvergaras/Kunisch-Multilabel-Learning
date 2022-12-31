@@ -6,7 +6,11 @@ Este repositorio contiene el código de  **"Aprendizaje multietiqueta de patrone
 
 El problema abordado corresponde a la generación de una herramienta de apoyo al etiquetado de patrones geométricos en objetos de herencia cultural,  un proceso de la arqueología en donde una imagen es descrita a través de una serie de "etiquetas" relativas a sus propiedades geométricas más importantes. Por ejemplo, la imagen a continuación podría describirse por las etiquetas "T-shapped, dotted, vertical", entre otras.
 
-<img title="" src="dibujos/15b.png" alt="" width="161" data-align="center">
+<p align="center">
+<img width="200" src="dibujos/15b.png" alt="dibujos/15b.png">
+</p>
+
+
 
 Tal desafío se aborda en esta ocasión a través de las figuras y etiquetas disponibles en el libro Ornamente Geometrischen Vasen: Ein Kompendium (Norbert Kunisch, 1998), obra en la cual el autor describe más de 700 patrones geométricos provenientes de objetos encontrados en excavaciones en Grecia durante el siglo XVII. De esta manera,  la meta principal se traduce en el desarrollo de un modelo capaz de ''replicar'' el etiquetado realizado por Kunisch, al recibir algunas figuras ya etiquetadas como ejemplos para el aprendizaje y separándose otras cuantas para la evaluación (aprendizaje supervisado).
 
