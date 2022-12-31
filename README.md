@@ -197,15 +197,13 @@ A continuación se presentan los distintos scripts que componen la carpeta `note
 
 ### 1. ``Labels normalization.ipynb``
 
-
-
 ### 2. `Split and Augmentation.ipynb`
 
 ### 3. `Split and Augmentation.ipynb`
 
-### 4. `Resnet Training.ipynb` y ``ResNet Feature Extraction``
+### 4. `Resnet raining.ipynb` y ``ResNet Feature Extraction``
 
-## 5. ``Traditional MLC.ipynb``
+### 5. ``Traditional MLC.ipynb``
 
 ### 6. ``C2AE Training.ipynb`` y ``AlexNet Extraction.ipynb``
 
@@ -216,3 +214,19 @@ A continuación se presentan los distintos scripts que componen la carpeta `note
 ### 9. ``Calculadora de métricas.ipynb``
 
 El notebook `Calculadora de métricas`  tiene un fin meramente auxiliar. Su objetivo es leer los archivos de predicciones generados por los notebooks de C2AE, TDNN y CNN-RNN y volver a generar los archivos de resultados `metadata.csv`, lo cual resulta útil en caso de querer calcular una métrica nueva (no considerada al momento de ejecutar los experimentos).
+
+
+
+## TO-DO:
+
+- Encontrar formas más eficientes en espacio de generar los datasets aumentados. Hay muchas imágenes que se repiten entre un dataset y otro y hasta ahora lo que se está haciendo es generar duplicados, lo cual va aumentando poco a poco el espacio requerido para lo experimentos.
+
+- Evaluar otras técnicas tanto del Enfoque Tradicional (métodos de Ensemble, por ejemplo) como del Enfoque XMLC (métodos basados en redes de grafos convolucionales, por ejemplo).
+
+- Estudiar la posibilidad de traducir el aprendizaje obtenido por los mejores modelos a un lenguaje visual. Sería interesante ver si mediante redes desconvolucionales se logra capturar la relación {componente del patrón - etiqueta}.
+
+- ... + Todo el trabajo futuro expuesto en el [documento final.](documentos/Tesis_F.pdf)
+
+
+
+Contacto: matiasvergara@ug.uchile.cl
