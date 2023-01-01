@@ -118,20 +118,25 @@ El repositorio incluye diversas carpetas, a saber:
   |       |-- augmented_train_df.json
   |       |-- test_df.json
   |       `-- val_df.json
-  |-- blur ...
+  |-- blur ..
   ```
 
-```
 - Una carpeta [features](features), en donde se guardan los descriptores (a generar) de las imagenes a estudiar, separados por carpetas según su origen (por ejemplo, alexnet o resnet) y según el dataset al que corresponde (base, blur, ref, blur_ref, etc). Cada subcarpeta presenta además una última división según el fold al que corresponde (K0, K1, K2, K3).
 
 - Esta carpeta se poblará automáticamente mediante los scripts, por lo cual no es necesario crear nada a mano.
 
 - A modo de ejemplo, se incluyen los descriptores para el conjunto 'base' obtenidos a partir de AlexNet y ResNet.
+
 - Una carpeta [models](models) en la cual se guardarán los checkpoints de los modelos resultantes, siguiendo la misma estructura de la carpeta features. Se recomienda dejar el contenido de esta carpeta fuera del sistema de versionamiento pues puede crecer considerablemente.
+
 - Esta carpeta se generará automáticamente mediante los scripts, por lo cual no es necesario crear nada a mano.
+
 - Una carpeta [outputs](outputs) en la cual se guardarán los resultados de cada experimento, con un nombre particular a cada caso pero siguiendo la estructura de modelo/dataset/nombre_experimento/fold.
+
 - Esta carpeta se poblará automáticamente mediante los scripts, por lo cual no es necesario crear nada a mano.
+
 - Finalmente, el repositorio incluye también una carpeta  [notebooks](notebooks), la cual incluye una serie de notebooks de python los cuales llevan a cabo todos los procesos necesarios asumiendo la estructura de carpetas anteriormente presentada.
+
 - Nótese que al interior de la carpeta notebooks se encuentran tanto múltiples scripts (.py, .ipynb) como una carpeta de nombre `graficos`. Mientras los scripts son necesarios para la replicación de los experimentos y se encuentran debidamente documentados, el contenido de la carpeta `graficos` no está documentado y se incluye solamente por si alguien, queriendo continuar el trabajo, requiriese inspiración sobre cómo generar las figuras del documento de tesis.
 
 ## Ambientes
@@ -224,9 +229,9 @@ Flags nuevas:
 
 Entrada: flags de configuración correspondientes a un conjunto de datos para el cual ya se hayan ejecutado los notebooks anteriores (es decir, que existan sus labels y features).
 
-Salida: visualización de un benchmark de métodos tradicionales en todo el espectro de etiquetas, archivo `resultados.csv` con múltiples métricas para cada método.
+Salida: visualización de un benchmark de métodos tradicionales en todo el espectro de etiquetas, visualización de las matrices de confusión para un método y umbral de frecuencia particular, archivo `resultados.csv` con múltiples métricas para cada método en todo el espectro de etiquetas posibles.
 
-Este notebook almacena todos los experimentos relacionados al Enfoque Tradicional. Se recomienda ejecutarlo en el ambiente con Python 3.8 para asegurar compatibilidad.
+Este notebook contiene todos los experimentos relacionados al Enfoque Tradicional. Se recomienda ejecutarlo en el ambiente con Python 3.8 para asegurar compatibilidad.
 
 Al igual que los notebooks anteriores, las primeras celdas incorporan parámetros que determinan el experimento a realizar: si usar RN50 o RN18, si usar pesos en el entrenamiento, las flags para los datos sintéticos, etc. 
 
