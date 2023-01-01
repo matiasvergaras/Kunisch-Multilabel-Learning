@@ -156,20 +156,24 @@ conda install numpy pandas scikit-learn matplotlib seaborn scipy
 conda install -c conda-forge skmultilearn
 
 # Generación de imagenes sintéticas
-conda install -c conda-forge imgaug
+pip install imgaug
 
 # Manipulación de imágenes 
-conda install -c conda-forge opencv
+pip install opencv-contrib-python
 
 # Procesamiento de etiquetas
 conda install -c anaconda nltk
 ```
 
-Existe sin embargo un experimento que requiere un ambiente adicional en Python 3.8 pues utiliza una versión específica de `scikit-learn` no compatible con Python 3.10: se trata del Enfoque Tradicional mediante métodos de transformación del algoritmo (BRkNN, MLkNN). Para tal fin, basta crear un segundo ambiente con Python 3.8 y ejecutar los mismos comandos pero especificando la versión de scikit:
+Existe sin embargo un experimento que requiere un ambiente adicional en Python 3.8 pues utiliza una versión específica de `scikit-learn` no compatible con Python 3.10: se trata del Enfoque Tradicional mediante métodos de transformación del algoritmo (BRkNN, MLkNN). Para tal fin, basta crear un segundo ambiente con Python 3.8 y ejecutar los siguientes comandos:
 
 ```bash
+# versión específica de scikit
 conda install scikit-learn=0.24.1
 conda install scikit-multilearn=0.2.0
+
+# otras librerías necesarias para la ejecución de Traditional MLC.ipynb
+conda install pandas numpy scipy matplotlib seaborn 
 ```
 
 ## Archivos necesarios no incluidos
