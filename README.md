@@ -240,6 +240,22 @@ Flags nuevas:
 
 ### 5. ``C2AE Training.ipynb`` y ``AlexNet Extraction.ipynb``
 
+Entrada: flags de configuración correspondientes a un conjunto de datos para el cual ya se hayan ejecutado los notebooks anteriores (es decir, que existan sus labels y features).
+
+Salida: en el caso de AlexNet Extraction, conjunto de features creadas mediante AlexNet preentrenada sobre ImageNet. En el caso de C2AE Training, archivo de predicciones `predictions.csv` y de resultados `metadata.csv` para C2AE. 
+
+AlexNet Extraction se encarga de generar features para ser utilizadas como entrada de C2AE. Si bien el notebook incorpora flags relacionadas con el uso de AlexNet como TDNN (tales como `TH_TRAIN, TH_VAL, TH_TEST`), estas no tienen efecto alguno pues la red no se reentrena. 
+
+C2AE Training corresponde al entrenamiento y test de C2AE sobre el desafío en cuestión. Las flags son las mismas, pero se incorporan algunas adicionales:
+
+- `FEATURES_DIM`, que debe calzar con la dimensión de las features (4096 en el caso de AlexNet)
+
+- `NUM_LABELS`, cantidad de etiquetas a utilizar (las X más frecuentes)
+
+- `BATCH_SIZE, PATIENCE, NUM_EPOCHS`, con sus significados habituales de ML.
+
+- `fx_h_dim, fe_h_dim, fd_h_dim`, cantidad de neuronas en cada capa oculta de los componentes $F_x$, $F_e$ y $F_d$ de C2AE. 
+
 ### 6. ``TDNN Training.ipynb``
 
 ### 7. ``CNN-RNN Training.ipynb``
