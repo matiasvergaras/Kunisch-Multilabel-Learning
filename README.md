@@ -150,10 +150,10 @@ En general, basta crear un ambiente de Python 3.10 y ejecutar los siguientes com
 conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia 
 
 # Manipulación de datos, visualizaciones
-conda install numpy pandas sklearn matplotlib seaborn scipy 
+conda install numpy pandas scikit-learn matplotlib seaborn scipy 
 
 # Aprendizaje multietiqueta desde Enfoque Tradicional
-conda install skmultilearn
+conda install -c conda-forge skmultilearn
 
 # Generación de imagenes sintéticas
 conda install -c conda-forge imgaug
