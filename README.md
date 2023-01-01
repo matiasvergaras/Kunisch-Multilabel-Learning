@@ -143,7 +143,7 @@ El repositorio incluye diversas carpetas, a saber:
 
 Para el desarrollo de los experimentos se utilizó Anaconda 3 como gestor de ambientes.     
 
-En general, basta crear un ambiente de Python 3.10 y ejecutar los siguientes comandos (véase [requirementsP10.txt](requirementsP10.txt)):
+En general, basta crear un ambiente de Python 3.10 y ejecutar los siguientes comandos :
 
 ```bash
 # Instalación de Pytorch. Podría cambiar según OS, ver pytorch.org
@@ -165,7 +165,7 @@ conda install -c conda-forge opencv
 conda install -c anaconda nltk
 ```
 
-Existe sin embargo un experimento que requiere un ambiente adicional en Python 3.8 pues utiliza una versión específica de `scikit-learn` no compatible con Python 3.10: se trata del Enfoque Tradicional mediante métodos de transformación del algoritmo (BRkNN, MLkNN). Para tal fin, basta crear un segundo ambiente con Python 3.8 y ejecutar los mismos comandos pero especificando la versión de scikit (véase [requirementsP38.txt](requirementsP38.txt)):
+Existe sin embargo un experimento que requiere un ambiente adicional en Python 3.8 pues utiliza una versión específica de `scikit-learn` no compatible con Python 3.10: se trata del Enfoque Tradicional mediante métodos de transformación del algoritmo (BRkNN, MLkNN). Para tal fin, basta crear un segundo ambiente con Python 3.8 y ejecutar los mismos comandos pero especificando la versión de scikit:
 
 ```bash
 conda install scikit-learn=0.24.1
@@ -243,9 +243,9 @@ Flags nuevas:
 
 - `SAVE`: si es True, los resultados del benchmark se guardarán en la ruta indicada por las celdas de configuración. De lo contrario, no se guardará nada.
 
-### 5. ``C2AE Training.ipynb`` y ``AlexNet Extraction.ipynb``
+### 5. ``AlexNet Extraction.ipynb`` y ``C2AE Training.ipynb``
 
-Entrada: flags de configuración correspondientes a un conjunto de datos para el cual ya se hayan ejecutado los notebooks anteriores (es decir, que existan sus labels y features).
+Entrada: múltiples flags de configuración, entre ellas la especificación de un conjunto de datos para el cual ya se haya ejecutado el notebook de augmentation (es decir, que existan sus patterns y labels).
 
 Salida: en el caso de AlexNet Extraction, conjunto de features creadas mediante AlexNet preentrenada sobre ImageNet. En el caso de C2AE Training, archivo de predicciones `predictions.csv` y de resultados `metadata.csv` para C2AE. 
 
@@ -263,11 +263,35 @@ C2AE Training corresponde al entrenamiento y test de C2AE sobre el desafío en c
 
 ### 6. ``TDNN Training.ipynb``
 
+Entrada: múltiples flags de configuración, entre ellas la especificación de un conjunto de datos para el cual ya se haya ejecutado el notebook de augmentation (es decir, que existan sus patterns y labels).
+
+Salida: archivo de predicciones `predictions.csv` y de resultados `metadata.csv` para AlexNet como TDNN.
+
+Este notebook se encarga de entrenar y testear AlexNet como Threshold Dependant Neural Network. Funciona de una manera muy similar al de C2AE, siendo las celdas en  'Configuración del experimento' las que determinan todo el experimento a realizar.
+
+Algunas flags nuevas:
+
+- `TH_TRAIN`, threshold de asignación de etiquetas en entrenamiento
+
+- `TH_VAL`, threshold de asignación de etiquetas en validación
+
+- `TH_TEST`, threshold de asignación de etiquetas en test
+
+- `use_pos_weights`, booleano indicando si usar o no pesos para equilibrar el entrenamiento
+
+- `pos_weight_factor`, float entre 0 e infinito. Corresponde a un ponderador del peso de los casos ''positivos'': si es  1, los casos positivos pesarán tanto como los negativos (pesos equilibrados mediante el inverso de la frecuencia). Si es 2, los casos positivos pesarán el doble que los negativos, y así hasta infinito. Se recomienda mantener un valor 1. 
+
 ### 7. ``CNN-RNN Training.ipynb``
+
+Entrada: múltiples flags de configuración, entre ellas la especificación de un conjunto de datos para el cual ya se haya ejecutado el notebook de augmentation (es decir, que existan sus patterns y labels).
+
+Salida: archivo de predicciones `predictions.csv` y de resultados `metadata.csv` para AlexNet+LSTM como CNN-RNN
+
+Este notebook se encarga de entrenar y testear la combinación de AlexNet y LSTM como CNN-RNN. Funciona de una manera muy similar al de C2AE, siendo las celdas en 'Configuración del experimento' las que determinan todo el experimento a realizar.
 
 ### 8. ``Calculadora de métricas.ipynb``
 
-El notebook `Calculadora de métricas`  tiene un fin meramente auxiliar. Su objetivo es leer los archivos de predicciones generados por los notebooks de C2AE, TDNN y CNN-RNN y volver a generar los archivos de resultados `metadata.csv`, lo cual resulta útil en caso de querer calcular una métrica nueva (no considerada al momento de ejecutar los experimentos).
+El notebook `Calculadora de métricas`  tiene un fin meramente auxiliar. Su objetivo es leer los archivos de predicciones generados por los notebooks de C2AE, TDNN y CNN-RNN y volver a calcular el archivo de resultados `metadata.csv`, lo cual resulta útil en caso de querer calcular una métrica nueva (no considerada al momento de ejecutar los experimentos).
 
 ## TO-DO:
 
